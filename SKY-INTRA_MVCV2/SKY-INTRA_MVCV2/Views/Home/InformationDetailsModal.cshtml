@@ -1,0 +1,32 @@
+﻿@model ServiceGateway.Model.Information
+
+
+<div class="modal-content" >
+    <div class="modal-header" style="height:12px; border:none;">
+        @*<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>*@
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="panel panel-primary" style="min-height:500px; width:100%; border-color:#42678A">
+            <div class="panel-heading" style="background-color:#42678A;">
+
+                <h1 class="panel-title" style="text-align:center; font-size:24px;">
+
+                    @Model.Header
+
+                </h1>
+
+            </div>
+            <!--background-color: rgb(41, 128, 185);-->
+            <div class="panel-body">
+
+                @Html.Raw(Model.Body)
+
+            </div>
+        </div>
+
+    </div>
+</div>

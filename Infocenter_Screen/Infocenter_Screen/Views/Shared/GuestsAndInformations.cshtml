@@ -1,0 +1,125 @@
+﻿@model Infocenter_Screen.Models.ViewModels.InfoGuestViewModel
+<style>
+    #SW {
+        position: fixed;
+        width: 50%;
+        height: 40%;
+        max-height: 40%;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border-color: #42678A;
+    }
+</style>
+<div id="SW" class="carousel slide panel" data-ride="carousel" data-interval="45000">
+
+    <div class="carousel-inner">
+        @{
+            var firstInformation = Model.Informations.FirstOrDefault();
+        }
+        @if (Model.Guests.Count() != 0 || Model.Informations.Count() != 0)
+        {
+            if (Model.Guests.Count() != 0)
+            {
+                <div class="item active">
+                    <div class="panel panel-primary" style="border:hidden;">
+                        <div class="panel-heading" style="background-color:#42678A; border:none;">
+                            <h1 class="panel-title" style="text-align:center; font-size:24px;"> Gæster idag</h1>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <table class="table table-responsive table-striped" style="background-color:white; ">
+                                    <tbody>
+                                        @foreach (var item in Model.Guests)
+                                        {
+                                            <tr>
+                                                <td><h3 style="color:#42678A; margin-left:10px">@item.Name</h3></td>
+                                                <td><h3 style="color:#42678A; font-weight:bold">@item.Company</h3></td>
+                                                <td><img style="float:right; height:5.5vh; width:4.5vw;" src="~/Flags/@item.Country" /></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                foreach (var item in Model.Informations)
+                {
+
+                    <div class="item">
+                        <div class="panel panel-primary" style="border:none; box-shadow:none;">
+                            <div class="panel-heading" style="background-color:#42678A;">
+                                <h1 class="panel-title" style="text-align:center; font-size:24px;">Information</h1>
+                            </div>
+                            <div class="panel-body">
+                                @Html.Raw(item.Body)
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+            else
+            {
+                foreach (var item in Model.Informations)
+                {
+                    if (Model.Informations.Count() > 0)
+                    {
+                        if (item.Equals(firstInformation))
+                        {
+                            <div class="item active">
+                                <div class="panel panel-primary" style="border:none; box-shadow:none; background-color:#42678A;">
+                                    <div class="panel-heading" style="background-color:#42678A;">
+                                        <h1 class="panel-title" style="text-align:center; font-size:24px;">Information</h1>
+                                    </div>
+                                    <div class="panel-body">
+                                        @Html.Raw(item.Body)
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="item">
+                                <div class="panel panel-primary" style="border:none; box-shadow:none; background-color:#42678A;">
+                                    <div class="panel-heading" style="background-color:#42678A;">
+                                        <h1 class="panel-title" style="text-align:center; font-size:24px;">Information</h1>
+                                    </div>
+                                    <div class="panel-body">
+                                        @Html.Raw(item.Body)
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="item active">
+                            <div class="panel panel-primary" style="border:none; box-shadow:none; background-color:#42678A;">
+                                <div class="panel-heading" style="background-color:#42678A;">
+                                    <h1 class="panel-title" style="text-align:center; font-size:24px;">Information</h1>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.Raw(item.Body)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            <div style="height: 100%; text-align:center; display:table; width:100%;"><h3 id="SWText">Kan ikke finde data...</h3></div>
+        }
+
+    </div>
+</div>
+
+

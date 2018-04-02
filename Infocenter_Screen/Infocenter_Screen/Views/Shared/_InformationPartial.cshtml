@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DTOModel.Information>
+
+<style>
+    #SW {
+        position: fixed;
+        width: 50%;
+        height: 40%;
+        max-height: 40%;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border-color: #42678A;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <div class="panel panel-primary" style="border:none; box-shadow:none;">
+            <div class="panel-heading" style="background-color:#42678A;">
+                <h1 class="panel-title" style="text-align:center; font-size:24px;">Information</h1>
+            </div>
+            <div class="panel-body">
+                @Html.Raw(item.Body)
+            </div>
+        </div>
+    </div>
+}

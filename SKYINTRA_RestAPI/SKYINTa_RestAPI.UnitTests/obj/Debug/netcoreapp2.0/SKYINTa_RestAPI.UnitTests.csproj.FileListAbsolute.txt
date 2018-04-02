@@ -1,0 +1,9 @@
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\bin\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.deps.json
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\bin\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\bin\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.pdb
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.AssemblyInfoInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.AssemblyInfo.cs
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTa_RestAPI.UnitTests\obj\Debug\netcoreapp2.0\SKYINTa_RestAPI.UnitTests.pdb

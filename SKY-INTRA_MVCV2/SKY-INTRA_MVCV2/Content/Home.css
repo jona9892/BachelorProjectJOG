@@ -1,0 +1,84 @@
+﻿.headimage {
+    max-width: 100%;
+    padding: 1em;
+}
+
+    .headimage > img {
+        width: 100%;
+    }
+
+#topnyhedforside {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* fallback */
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 320px) {
+
+    body {
+        font-size: 2em;
+    }
+}
+
+#nyheder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px; /* fallback */
+    max-height: 32px; /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+#over img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+#myCarousel .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    text-shadow: none;
+}
+
+#myCarousel .list-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#myCarousel .list-group-item {
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+#myCarousel .list-group .active {
+    background-color: #eee;
+}
+
+@media (min-width: 992px) {
+    #myCarousel {
+        padding-right: 33.3333%;
+    }
+
+        #myCarousel .carousel-controls {
+            display: none;
+        }
+}
+
+@media (max-width: 991px) {
+    .carousel-caption p,
+    #myCarousel .list-group {
+        display: none;
+    }
+}

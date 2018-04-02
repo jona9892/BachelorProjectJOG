@@ -1,0 +1,11 @@
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\bin\Debug\netstandard2.0\DomainModel.deps.json
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\bin\Debug\netstandard2.0\DomainModel.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\bin\Debug\netstandard2.0\DomainModel.pdb
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.csproj.CoreCompileInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.AssemblyInfoInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.AssemblyInfo.cs
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\obj\Debug\netstandard2.0\DomainModel.pdb
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\DomainModel\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml

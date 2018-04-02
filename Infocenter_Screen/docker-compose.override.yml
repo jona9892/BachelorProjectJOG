@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  infocenter_screen:
+    ports:
+      - "80"
+networks:
+  default:
+    external:
+      name: nat

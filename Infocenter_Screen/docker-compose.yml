@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  infocenter_screen:
+    image: infocenter_screen
+    build:
+      context: .\Infocenter_Screen
+      dockerfile: Dockerfile

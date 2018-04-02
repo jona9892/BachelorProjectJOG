@@ -1,0 +1,106 @@
+﻿@using SKY_INTRA_MVCV2.Models
+
+@model PDFViewModel
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    /*	general	*/
+
+    section {
+    }
+
+    .custom-button {
+        font-size: 18px;
+        border: 2px solid #3F6184;
+        padding: 5px 10px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+        background-color: #3F6184;
+    }
+
+        .custom-button:hover,
+        .custom-button:focus,
+        .custom-button.active {
+            color: #3F6184;
+            background-color: #ffffff;
+            outline: none;
+        }
+</style>
+
+@section scripts {
+    <script>
+
+    </script>
+}
+
+<body>
+
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">
+                        PDF
+                    </h3>
+                </div>
+                <div class="panel panel-body" style="min-height:200px;">
+                    @using (Html.BeginForm("CreateFileImage", "PDF", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            @Html.Label("PDF fil")
+                            @Html.TextBoxFor(m => Model.FileImage.Path, null, new { type = "file", @class = "input-file" })
+
+                        </div>
+                        <div class="box-footer">
+                            <button class="btn btn-primary" type="submit">Tilføj</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">
+                        
+                    </h3>
+                </div>
+                <div class="panel panel-body" style="min-height:200px;">
+                    <table class="table table-hover table-responsive table-striped" style="background-color:white">
+                        <thead>
+                            <tr>
+                                <th>Fil navn</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.FileImages)
+                            {
+                                <tr @*onclick="location.href = '@(Url.Action("InformationDetails", "Information", new { id = item.Id }))'"*@>
+                                    <td>@item.Title</td>
+                                    <td>
+                                        @using (Html.BeginForm("DeleteFileImage", "PDF", new { id = item.Id }, FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+
+                                            <div class="form-actions no-color">
+                                                <input type="submit" value="Fjern" class="btn btn-default" />
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

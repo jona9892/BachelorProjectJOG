@@ -1,0 +1,54 @@
+﻿
+@model IEnumerable<String> 
+
+<style>
+    #NW {
+        position: fixed;
+        width: 50%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        display: table;
+    }
+</style>
+
+<!-----------------------------------Images------------------------------------->
+<div id="NW">
+    @{
+        var first = Model.ElementAt(1);
+    }
+    <div id="BilledeCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            @foreach (var item in Model)
+            {
+                if (Model.Count() > 1)
+                {
+                    if (@item.Equals(first))
+                    {
+                        <div class="item active">
+                            <img src="@Url.Content(item)" style=" width: 50vw; height: 50vh; margin-left: auto; margin-right: auto; display: block;" onerror="src='/Images/Skylight.png'" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="item">
+                            <img src="@Url.Content(item)" style="width: 50vw; height: 50vh; margin-left: auto; margin-right: auto; display: block;" onerror="src='/Images/Skylight.png'" />
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="item active">
+                        <img src="@Url.Content(item)" style="width: 50vw; height: 50vh; margin-left: auto; margin-right: auto; display: block;" onerror="src='/Images/Skylight.png'" />
+                    </div>
+
+                }
+            }
+
+        </div>
+
+    </div>
+</div>

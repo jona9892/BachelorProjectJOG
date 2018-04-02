@@ -1,0 +1,137 @@
+﻿@using SKY_INTRA_MVCV2.Models
+
+@model GuestViewModel
+
+@section scripts {
+
+}
+
+
+<head>
+    <link rel="stylesheet" runat="server" media="screen" href="~/Content/Home.css" />
+</head>
+
+<body>
+    <div>
+        <section class="content-header" style="margin-bottom:10px;">
+            <h1>
+                Gæst administration
+            </h1>
+        </section>
+
+
+        @*<div class="box box-primary" style="max-width:700px;">
+                <div class="box-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group">
+                            @Html.Label("Velkomst besked")
+                        </div>
+                        <div class="form-group">
+                            @Html.TextArea("WelcomeMessage", new { @class = "textarea", rows = "5", style = "width:50%;background-color:#f8f8f8" })
+                        </div>
+                        <div class="box-footer">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    }
+                </div>
+            </div>*@
+        <div class="col-lg-8 box box-primary" style="max-width:1100px; border-top-color:#42678A">
+            <div class="panel-heading">
+                <h1 class="panel-title">Gæster</h1>
+            </div>
+
+            <table class="table table-hover table-responsive" style="background-color:white">
+                <thead>
+                    @using (Html.BeginRouteForm("Default", new { controller = "Guest", action = "Create" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <tr style="background-color:#f8f8f8">
+                            <th>@Html.TextBoxFor(m => Model.Guest.Name, new { type = "text", @class = "form-control", placeholder = "Navn" })@*<input type="text" class="form-control" placeholder="Navn">*@</th>
+                            <th>@Html.TextBoxFor(m => Model.Guest.Company, new { type = "text", @class = "form-control", placeholder = "Virksomhed" })@*<input type="text" class="form-control" placeholder="Virksomhed">*@</th>
+                            <th>
+                                @Html.DropDownListFor(m => m.Guest.Country,
+                                                                         new SelectList(Enum.GetValues(typeof(Country))),
+                                                                         "Vælg land",
+                                                                         new { @class = "form-control" })
+                            </th>
+                            <th>
+                                <div class="col-lg-1 input-group date">
+                                    @Html.EditorFor(model => model.Guest.Dato, new { htmlAttributes = new { @value = DateTime.Today, @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Guest.Dato, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>@*<input type="text" class="form-control" placeholder="Dato">*@
+                            </th>
+                            <th> <button class="btn btn-primary" type="submit">Tilføj</button></th>
+                        </tr>
+                    }
+                    <tr>
+                        <th>Navn</th>
+                        <th>Virksomhed</th>
+                        <th>Land</th>
+                        <th>Dato</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Guests)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Company</td>
+                            <td><img style="max-width:100px" src="~/Flags/@item.Country" /></td>
+                            <td>@item.Dato.ToShortDateString()</td>
+                            <th>
+                                @using (Html.BeginForm("Delete", "Guest", new { id = item.Id }, FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Delete" class="btn btn-default" />
+                                    </div>
+                                } @*<button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Delete", "Guest", new { id = item.Id})'">Fjern</button>*@
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-4 panel-primary" style="border:none; width:33%;">
+            <div class="panel-heading" style="background-color:#42678A">
+                <h1 class="panel-title" align="center">Velkommen - Welcome</h1>
+
+            </div>
+            <div class="panel panel-body">
+
+                @*<div id="Gæstinformation">
+                        @foreach (var item in Model.GæstInformationer)
+                        {
+                            <div style="height: 80%; text-align:center; display:table; width:100%;"><h3 id="Gæsttext">@item</h3></div>
+                        }
+                    </div>*@
+                @*<br />*@
+
+                @foreach (var item in Model.Guests)
+                {
+
+                    @*<div class="panel panel-primary" style=" text-align:left; display:table; width:85%; margin-left:8%;">
+                            <h3 id="Gæsttext" style="display:inline-block; vertical-align:middle; margin-left:3%;">@item.Name <strong style="font-size:4vmin">@item.Company</strong></h3>
+                            <img style="float:right; height:8vh; width:8vw; margin-right:0.5px;" src="~/Flags/@item.Country" />
+                        </div>*@
+                    <div class="panel panel-primary" style=" text-align:center; display:table; width:100%; ">
+                        <img class="pull-left" style="height:6.5vh; width:5.5vw;" src="~/Flags/@item.Country" />
+                        <h3 align="center" style=" vertical-align:middle; margin-left:1%; color: rgb(41, 128, 185); font-size: 2.5vmin; font-family: sans-serif;"> <strong style="font-size:3vmin">@item.Company</strong></h3>
+                        <h3 style="vertical-align:middle; margin-left:1%;color: rgb(41, 128, 185); font-size: 2.5vmin; font-family: sans-serif;">@item.Name </h3>
+
+
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+
+</body>

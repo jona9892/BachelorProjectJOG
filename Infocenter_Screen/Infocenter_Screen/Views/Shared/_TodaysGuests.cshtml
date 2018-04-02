@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DTOModel.Guest>
+
+<style>
+    #SW {
+        position: fixed;
+        width: 50%;
+        height: 40%;
+        max-height: 40%;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border-color: #42678A;
+    }
+</style>
+
+<div class="panel panel-primary" style="border:hidden;">
+    <div class="panel-heading" style="background-color:#42678A; border:none;">
+        <h1 class="panel-title" style="text-align:center; font-size:24px;"> Gæster idag</h1>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <table class="table table-responsive table-striped" style="background-color:white; ">
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><h3 style="color:#42678A; margin-left:10px">@item.Name</h3></td>
+                            <td><h3 style="color:#42678A; font-weight:bold">@item.Company</h3></td>
+                            <td><img style="float:right; height:5.5vh; width:4.5vw;" src="~/Flags/@item.Country" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+

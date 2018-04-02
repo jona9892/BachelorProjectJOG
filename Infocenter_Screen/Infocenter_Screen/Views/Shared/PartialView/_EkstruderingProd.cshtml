@@ -1,0 +1,26 @@
+﻿
+
+<style>
+    #PTET {
+        position: fixed;
+        width: 50%;
+        height: 30%;
+        top: 0;
+        left: 50%;
+        background: #ffffff;
+        display: table;
+    }
+</style>
+
+<div id="PTET" class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title" style="text-align:center; font-size:24px;">Ekstrudering</h1>
+    </div>
+    <div>
+        @if (Model.ProdEkstrudering.Count != 0)
+        {
+            <img src="@Url.Content(Model.ProdEkstrudering.First())" style="margin-left: auto; margin-right: auto; display: block; margin-top:3%;" onerror="src='/Images/Skylight.png'" />
+        }
+    </div>
+
+</div>

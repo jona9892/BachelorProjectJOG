@@ -1,0 +1,10 @@
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\DTOModel.dll
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\DTOModel.pdb
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\obj\Debug\DTOModel.csprojResolveAssemblyReference.cache
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\obj\Debug\DTOModel.csproj.CoreCompileInputs.cache
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\obj\Debug\DTOModel.dll
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\obj\Debug\DTOModel.pdb
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jog\source\repos\Infocenter_Screen\DTOModel\bin\Debug\System.Net.Http.Formatting.xml

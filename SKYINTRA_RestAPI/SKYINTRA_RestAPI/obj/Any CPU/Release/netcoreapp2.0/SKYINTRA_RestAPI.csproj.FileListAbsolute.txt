@@ -1,0 +1,13 @@
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.deps.json
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.runtimeconfig.json
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.runtimeconfig.dev.json
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.pdb
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\DomainModel.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\bin\Any CPU\Release\netcoreapp2.0\DomainModel.pdb
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.csprojResolveAssemblyReference.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.csproj.CoreCompileInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.AssemblyInfoInputs.cache
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.AssemblyInfo.cs
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.dll
+C:\Users\jog\SKY-INTRA\SKYINTRA_RestAPI\SKYINTRA_RestAPI\obj\Any CPU\Release\netcoreapp2.0\SKYINTRA_RestAPI.pdb

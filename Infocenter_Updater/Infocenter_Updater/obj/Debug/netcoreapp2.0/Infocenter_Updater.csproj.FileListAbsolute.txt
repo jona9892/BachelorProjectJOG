@@ -1,0 +1,13 @@
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.csprojResolveAssemblyReference.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.csproj.CoreCompileInputs.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.AssemblyInfoInputs.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.AssemblyInfo.cs
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\Infocenter_Updater.deps.json
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\Infocenter_Updater.runtimeconfig.json
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\Infocenter_Updater.runtimeconfig.dev.json
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\Infocenter_Updater.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\Infocenter_Updater.pdb
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\DTOModel.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\bin\Debug\netcoreapp2.0\DTOModel.pdb
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Infocenter_Updater\obj\Debug\netcoreapp2.0\Infocenter_Updater.pdb

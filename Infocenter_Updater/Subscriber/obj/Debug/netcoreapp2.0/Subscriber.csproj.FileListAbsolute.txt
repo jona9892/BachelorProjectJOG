@@ -1,0 +1,13 @@
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.csprojResolveAssemblyReference.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.csproj.CoreCompileInputs.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.AssemblyInfoInputs.cache
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.AssemblyInfo.cs
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\Subscriber.deps.json
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\Subscriber.runtimeconfig.json
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\Subscriber.runtimeconfig.dev.json
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\Subscriber.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\Subscriber.pdb
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\DTOModel.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\bin\Debug\netcoreapp2.0\DTOModel.pdb
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.dll
+C:\Users\jog\source\repos\Infocenter_Updater\Subscriber\obj\Debug\netcoreapp2.0\Subscriber.pdb

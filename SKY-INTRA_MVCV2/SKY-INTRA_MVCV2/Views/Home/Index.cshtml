@@ -1,0 +1,367 @@
+﻿@model SKY_INTRA_MVCV2.Models.HomeViewModel
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    /*	general	*/
+
+    section {
+    }
+
+    .custom-button {
+        font-size: 18px;
+        border: 2px solid #3F6184;
+        padding: 5px 10px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+        background-color: #3F6184;
+    }
+
+        .custom-button:hover,
+        .custom-button:focus,
+        .custom-button.active {
+            color: #3F6184;
+            background-color: #ffffff;
+            outline: none;
+        }
+
+    #SW {
+        position: fixed;
+        width: 50%;
+        height: 43%;
+        max-height: 43%;
+        top: 50%;
+        left: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border-color: #42678A;
+    }
+
+    .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+        background-color: #EBF4FA;
+    }
+</style>
+
+@section scripts {
+    <script>
+        $(function () {
+
+            $('body').on('click', '.modal-link', function (e) {
+                e.preventDefault();
+
+                $("#modal-container").remove();
+                $.get($(this).data("targeturl"), function (data) {
+                    $(' <div class="modal fade" id="ekstruderingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                        '<div class="modal-dialog" style="width:50%; height:43%;">>' +
+                        '<div class="modal-content" id= "modalbody">' +
+                        data + '</div></div></div>').modal();
+                });
+            });
+        });
+
+    </script>
+}
+
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" runat="server" media="screen" href="~/Content/Home.css" />
+
+</head>
+
+<body>
+    @*<section class="content-header" style="margin-bottom:10px;">
+            <h1 style="display:inline-block;">
+                Kantine skærm
+            </h1>
+            <div style="float:right;display:inline-block; margin-right:5px;">
+                <button style="width:10vw; " class="custom-button">Opdater</button>
+            </div>
+
+        </section>*@
+    <!--First row-->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-primary">
+
+                <div class="panel panel-body" style="min-height:200px;">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div style="max-width:400px;">
+
+                                <div class="img-responsive headimage">
+                                    <img src="~/admin-lte/img/photo2.png" alt="" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6" style="padding-left:2em;">
+                            <h2 style="font-size:2em;">Topnyhed</h2>
+                            <p id="topnyhedforside" class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae egestas nulla. In venenatis nulla sed eros dignissim, ac vestibulum urna aliquet.</p>
+                            <p class="lead">
+                                <a class="btn btn-primary btn-lg" href="#" role="button">Læs videre</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+
+            <div class="panel-heading" style="background-color:#42678A;">
+                <h3 class="panel-title" style="color:#ffffff;">
+                    Nyheder
+                    <a href="#">
+                        <span class="pull-right">Se alle</span>
+                    </a>
+                </h3>
+
+            </div>
+
+            <div class="panel panel-body" style="min-height:200px;">
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--Second row-->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">Dagens gæster</h3>
+                </div>
+                <div class="panel panel-body" style="height:216px;overflow: auto">
+                    <table class="table table-responsive table-striped" style="background-color:white">
+                        <tbody>
+                            @foreach (var item in Model.Guests)
+                            {
+                                <tr>
+                                    <td style="font-size:medium;">@item.Name</td>
+                                    <td style="font-size:medium; color:#42678A;"><strong>@item.Company</strong></td>
+                                    <td><img style="max-width:50px" src="~/Flags/@item.Country" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">
+                        Information
+                        <a href="#">
+                            <span class="pull-right">Se alle</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="panel panel-body" style="min-height:216px;">
+                    <table class="table table-hover table-responsive table-striped" style="background-color:white; cursor: pointer;">
+                        <tbody>
+                            @if (Model.Informations.Count() != 0)
+                            {
+                                foreach (var item in Model.Informations.Take(5))
+                                {
+                                    <tr class="modal-link" data-targeturl="@Url.Action("InformationDetailsModal","Home", new { id = item.Id })">
+                                        <td>@item.Title</td>
+                                        <td>@item.Header</td>
+                                        <!-- Modal -->
+
+                                    </tr>
+
+                                }
+                            }
+
+                            <div id="modal-container" class="modal fade" tabindex="-1" role="dialog" align="center">
+                                <a href="#close" title="Close" class="modal-close-btn">X</a>
+                                <div class="modal-content">
+                                    <div class="modal-body"></div>
+                                </div>
+                            </div>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">
+                        Ekstrudering
+                        @if (User.IsInRole("Funktionærer"))
+                        {
+                            <a href="#" data-toggle="modal" data-target="#TermoformProdModal">
+                                <i class="fa fa-pencil-square-o fa-lg pull-right"></i>
+                            </a>
+                        }
+                        <div class="modal fade" id="TermoformProdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        @*<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>*@
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    @using (Html.BeginRouteForm("Default", new { controller = "Kantine", action = "EditSmallFileImage" }))
+                                    {
+                                        <div class="modal-body">
+
+                                            @Html.AntiForgeryToken()
+                                            <div class="form-horizontal">
+
+                                                <div class="form-group">
+
+                                                    <div class="col-md-10">
+                                                        <h3 style="color:#42678A;">Termoform produktionstal</h3>
+                                                        <select class="form-control" name="InfoScreen.TermoformFileImageId">
+                                                            @foreach (var item in Model.FileImages)
+                                                            {
+                                                                <option value="@item.Id" @(@Model.TermoFileImage.Path == @item.Path ? "selected" : "" )>@item.Title</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
+                                                <button type="submit" class="btn btn-primary">Gem</button>
+                                                @*<div class="form-group ">
+                                                        <div class="col-md-offset-2 col-md-10">
+                                                            <input type="submit" value="Gem" class="btn btn btn-primary" />
+                                                        </div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    </h3>
+                </div>
+                <div class="panel panel-body" style="width:100%; height:280px;" align="center">
+                    @if (Model.EkstrudFileImage.Path != "")
+                    {
+                        <img style=" display:block;" src="@Url.Action("GetImg", "Home", new { path = Model.EkstrudFileImage.Path })" />
+                    }
+                    @*<img src="@Url.Content(Model.EkstrudFileImagePath)" alt="Image" onerror="src=@Url.Content( "~/Images/Logo.png")" />*@
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel-primary">
+                <div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">
+                        Termoform
+                        @if (User.IsInRole("Funktionærer"))
+                        {
+                            <a href="#" data-toggle="modal" data-target="#TermoformProdModal">
+                                <i class="fa fa-pencil-square-o fa-lg pull-right"></i>
+                            </a>
+                        }
+                    </h3>
+
+                    <div class="modal fade" id="TermoformProdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    @*<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>*@
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                @using (Html.BeginRouteForm("Default", new { controller = "Kantine", action = "EditSmallFileImage" }))
+                                {
+                                    <div class="modal-body">
+
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-horizontal">
+
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+                                                    <h3 style="color:#42678A;">Termoform produktionstal</h3>
+                                                    <select class="form-control" name="InfoScreen.TermoformFileImageId">
+                                                        @foreach (var item in Model.FileImages)
+                                                        {
+                                                            <option value="@item.Id" @(@Model.TermoFileImage.Path == @item.Path ? "selected" : "" )>@item.Title</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
+                                            <button type="submit" class="btn btn-primary">Gem</button>
+                                            @*<div class="form-group ">
+                                                    <div class="col-md-offset-2 col-md-10">
+                                                        <input type="submit" value="Gem" class="btn btn btn-primary" />
+                                                    </div>
+                                                </div>*@
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel panel-body" style="width:100%; height:280px" align="center">
+                    @if (Model.TermoFileImage.Path != "")
+                    {
+                        <img style=" display:block;" src="@Url.Action("GetImg", "Home", new { path = Model.TermoFileImage.Path })" />
+                    }
+
+                    @*<img src="@Url.Content(Model.EkstrudFileImagePath)" alt="Image" onerror="src=@Url.Content( "~/Images/Logo.png")" />*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Second row-->
+    <div class="row" style="">
+
+        <div class="panel-primary" style="background-color:#294056;">
+            @*<div class="panel-heading" style="background-color:#42678A;">
+                    <h3 class="panel-title">Mærkedage</h3>
+                </div>*@
+            <div class="panel panel-body" style="min-height:200px; background-color:#42678A;">
+
+                @foreach (var item in Model.anniversaries.OrderBy(x => x.date.Month).ThenBy(y => y.date.Day))
+                {
+                    <img style="max-width:30px;float:left; margin-right:20px;" src="~/Flags/Danmark.png" />
+                    <p style="display:block; color:white; font-style:italic;">
+                        @item.employee - @item.date.Day. @item.MonthName <strong style="margin-left:20px;">@item.years års @item.type</strong>
+                    </p>
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
